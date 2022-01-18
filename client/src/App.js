@@ -1,25 +1,47 @@
 import {useState,useEffect} from 'react'
+import Login from './Login'
+import Navbar from './Navbar'
+import Home from './Home'
+import SignupForm from './SignupForm'
 import {BrowserRouter,Switch,Route} from 'react-router-dom'
 
 function App() {
-  const [count,setCount]=useState(0)
-    useEffect(()=> {
-      fetch('/hello')
-      .then((r)=>r.json())
-      .then((data)=>setCount(data.count))
-    },[])
+ const [courier,setCourier] = useState(null)
+ const [display, setDisplay] = useState(true)
+ const []=useState()
+
+
+    useEffect(() => {
+      fetch("/me")
+      .then((response) => {
+        if (response.ok) {
+          response.json().then((courier) => setCourier(courier));
+        }
+      });
+    }, []);
+
+    function handleDisplay() {
+      setDisplay((current) => !current)
+      }
+
+  if (!courier) return <Login setCourier={setCourier} />
+
   return (
     <BrowserRouter>
-      <div className="App">
+     <Navbar setLogout = {setCourier}/>
+      <main className="App">
         <Switch>
-          <Route path="/testing">
-            <h1>Test Route</h1>
+          <Route path="/SignupForm">
+           <SignupForm setCourier = {setCourier} handleDisplay = {handleDisplay}/>
           </Route>
-          <Route path="/">
-            <h1>Page Count: {count}</h1>
+          <Route>
+           <Home path='/Home'/>
+          </Route>
+          <Route exact path="/">
+           <Login setCourier = {setCourier} />
           </Route>
         </Switch>
-      </div>
+      </main>
     </BrowserRouter>
   );
 }

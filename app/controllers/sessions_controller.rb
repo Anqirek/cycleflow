@@ -1,8 +1,8 @@
 class SessionsController < ApplicationController
- skip_before_action :authorize, only: :create, :raise => false
+ skip_before_action :authorize, only: :create
 
     def create
-        courier = Courier.find_by(name: params[:name])
+        courier = Courier.find_by(name:params[:name])
      if courier&.authenticate(params[:password])
         session[:courier_id] = courier.id
         render json: courier
@@ -14,11 +14,5 @@ class SessionsController < ApplicationController
         def destroy
            session.delete :courier_id
            head :no_content
-        end
-    
-        private
-    
-        def authorize
-          return render json: { error: "Not authorized" }, status: :unauthorized unless session.include? :courier_id
         end
 end

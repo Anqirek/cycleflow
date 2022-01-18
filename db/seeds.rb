@@ -6,6 +6,7 @@ customer = Customer.create(username:Faker::Name.name, email: Faker::Internet.ema
 end
 
 puts "Seeding Courier...🚚"
+
 20.times do
 courier = Courier.create(
     name:Faker::Name.name, 
@@ -15,7 +16,9 @@ courier = Courier.create(
 end
 
 puts "Seeding Items...♳♴♵"
+
 20.times do
+
 item = Item.create(
      bottle:["Plastic","Glass","Metal"].sample,
      size:[
@@ -39,6 +42,7 @@ item = Item.create(
 end
 
 puts "Seeding Pickups...📦"
+
 20.times do
 pickup = Pickup.create(item_id: Item.all.sample, courier_id: Courier.all.sample)
 end

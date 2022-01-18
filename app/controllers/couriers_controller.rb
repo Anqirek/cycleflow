@@ -1,6 +1,6 @@
 class CouriersController < ApplicationController
 rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
-# skip_before_action :authorize, only: :create
+skip_before_action :authorize, only: :create
         
     def index
      courier = Courier.all
