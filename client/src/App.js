@@ -8,7 +8,7 @@ import {BrowserRouter,Switch,Route} from 'react-router-dom'
 function App() {
  const [courier,setCourier] = useState(null)
  const [display, setDisplay] = useState(true)
- const []=useState()
+ 
 
 
     useEffect(() => {
@@ -32,10 +32,10 @@ function App() {
       <main className="App">
         <Switch>
           <Route path="/SignupForm">
-           <SignupForm setCourier = {setCourier} handleDisplay = {handleDisplay}/>
+           <SignupForm setCourier={setCourier} handleDisplay = {handleDisplay}/>
           </Route>
           <Route>
-           <Home path='/Home'/>
+           <Home path='/Home' courier={courier} />
           </Route>
           <Route exact path="/">
            <Login setCourier = {setCourier} />

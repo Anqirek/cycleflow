@@ -3,6 +3,7 @@ Rails.application.routes.draw do
  get '/me', to: 'couriers#show'
  get "/home", to: 'couriers#show'
  get '/courier', to: 'couriers#show'
+ get '/items', to: 'items#index'
 
  post '/', to: 'sessions#create'
  post '/signupform', to: 'couriers#create'

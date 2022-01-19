@@ -11,8 +11,7 @@ private
 
   def authorize
     @current_courier = Courier.find_by(id: session[:courier_id])
-
-    render json: { errors: ["Not authorized"] }, status: :unauthorized unless @current_user
+    render json: { errors: ["Not authorized"] }, status: :unauthorized unless @current_courier
   end
 
   def render_unprocessable_entity_response(invalid)
