@@ -1,8 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-size: auto;
   background: rgb(34,33,37);
-  background: radial-gradient(circle, rgba(247, 247, 247, 0.961) 0%, rgb(150, 220, 232) 35%, rgb(151, 222, 238) 100%);  background-repeat: repeat;
+  background: radial-gradient(circle, rgba(180, 247, 188, 0.961) 0%, rgb(150, 220, 232) 35%, rgb(151, 222, 238) 100%);  background-repeat: repeat;
   margin-left: 150px;
   margin-right: 100px;
   padding: auto;
+}
+
+.PickupCard {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  padding: 20px;
+  list-style-type: none;
+  float: left;
+}
+
+.navbar {
+display: block;
+align-content: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  display: inline;
+  float: left;
+}
+
+@media (max-width: 800px) {
+  .PickupCard {
+    flex-direction: column;
+  }
 }
