@@ -1,19 +1,26 @@
 import {Button,CardGroup,Card} from 'react-bootstrap'
+import PickupRequests from './PickupRequests'
+import { useHistory } from 'react-router-dom'
 
 function PickupCard({bottle,size,count,location,customer}){
+let history = useHistory()
+
+ function handlePick() {
+  history.push('/PickupRequests') 
+  }
 
 return ( 
 
  <div className="PickupCard" style={{}}>
   <CardGroup>
-   <Card className="text-center" style ={{color: '#000', width:'30rem'}}>
-    <Card.Img variant='top'className="rounded sm-auto d-block" src='https://media4.giphy.com/media/Vzq3HO2Cid0CHSW2h6/giphy.gif?cid=ecf05e47zhg3xk0tw7vic0kqifjw5yhtqn01gvi5zvq55a1m&rid=giphy.gif&ct=g'/>
+   <Card className="text-center" style ={{color: '#000', width:'20rem'}}>
+    <Card.Img id='card-img' variant='top'className="rounded sm-auto d-block" src='https://media4.giphy.com/media/Vzq3HO2Cid0CHSW2h6/giphy.gif?cid=ecf05e47zhg3xk0tw7vic0kqifjw5yhtqn01gvi5zvq55a1m&rid=giphy.gif&ct=g'/>
     <Card.Body>
     <Card.Title className='text-center'>
-     Customer:{customer}
+     Customer: {customer}
     </Card.Title> 
     <Card.Text className='text-center'>
-     Bottle:{bottle}
+     Bottle: {bottle}
       <br></br>
      Size: {size}
       <br></br>
@@ -21,7 +28,7 @@ return (
       <br></br>
      Location: {location}
     </Card.Text> 
-    <Button variant = 'primary'>Pickup Bottles</Button>
+    <button onClick={handlePick} type='submit'className='btn btn-lg btn-success border-light btn-block'>Pickup Bottles</button>
    </Card.Body>
   </Card>
  </CardGroup>

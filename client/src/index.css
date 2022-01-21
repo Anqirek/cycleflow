@@ -4,25 +4,92 @@
 
 body {
   background-size: auto;
-  background: rgb(34,33,37);
-  background: radial-gradient(circle, rgba(180, 247, 188, 0.961) 0%, rgb(150, 220, 232) 35%, rgb(151, 222, 238) 100%);  background-repeat: repeat;
+  background-image:url('https://cdn.dribbble.com/users/1010633/screenshots/7381291/media/4dd84adceaea77b43010a1879310bb27.png?compress=1&resize=400x300');
+  /* background: rgb(34,33,37); */
+  /* background: radial-gradient(circle, rgba(150, 220, 232) 0%, rgb(150, 220, 232) 35%, rgb(151, 222, 238) 100%);  background-repeat: repeat; */
   margin-left: 150px;
   margin-right: 100px;
   padding: auto;
+}
+.loginform {
+max-width: 450px;
+margin:auto;
+padding-top: 100px;
+}
+
+.headerloginform {
+color:aliceblue;
+font-size: xx-large;
+font-style: italic;
+font-weight: 500;
+font-family: cursive;
+padding-top: 30px;
+margin: auto;
+}
+
+.signinform {
+color:aliceblue;
+font-weight: 900;
+font-family: cursive;
+}
+
+.checkbox {
+ color:aliceblue;
+ font-weight: 700;
+ font-family: cursive;
 }
 
 .PickupCard {
   display: flex;
   align-items: center;
   align-content: center;
-  padding: 20px;
+  padding: 30px;
   list-style-type: none;
   float: left;
+  margin:auto;
+  
+}
+
+.btn {
+background-color: rgb(109, 218, 176);
+}
+
+#card-img {
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  width: 250px;
+  height: 250px;
+  margin: auto;
 }
 
 .navbar {
 display: block;
 align-content: center;
+}
+
+/* .nav {
+  
+} */
+
+.searchbar {
+width: 100%;
+text-align: center;
+color:aliceblue;
+font-weight: 700;
+font-family: cursive;
+}
+
+.pickup-requests{
+  color:aliceblue;
+  font-weight: 700;
+  font-family: cursive;
+}
+
+.navtitle {
+  color:aliceblue;
+  font-weight: 700;
+  font-family: cursive;
 }
 
 ul {

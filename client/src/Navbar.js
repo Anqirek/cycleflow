@@ -1,8 +1,18 @@
 import React from 'react'
-import Button from 'react-bootstrap/Button'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Button from 'react-bootstrap/Button'
+import { useHistory } from 'react-router-dom'
 
 function Navbar({setLogout}) {
+const history = useHistory()
+
+ function handlePickup(){
+     history.push('/PickupRequests')
+    }  
+ 
+ function handleHome(){
+  history.push('/Home') 
+ }
 
 function handleLogout() {
         fetch("/logout", {
@@ -11,13 +21,13 @@ function handleLogout() {
       }
     
 return (
- <nav className='navbar navbar-expand-sm navbar-light-bg-light'>
-  <a href='#'className='navbar-brand mb-0 h1'>Cycle and Flow
+ <nav className='nav navbar-expand-sm navbar-light-bg-light'>
+  <a href='#'className='navtitle navbar-brand mb-0 h1'>Cycle and Flow
   </a>
   <ul>
-   <li className='nav-item active'><Button>Home</Button></li>
-   <li className='nav-item active'><Button>Pickup</Button></li>
-   <li className='nav-item active'><Button onClick = {handleLogout}>Logout</Button></li>
+   <li className='nav-item active'><Button className='btn btn-lg btn-success border-light btn-block' onClick={handleHome}>Home</Button></li>
+   <li className='nav-item active'><Button className='btn btn-lg btn-success border-light btn-block' onClick={handlePickup}>Pickups</Button></li>
+   <li className='nav-item active'><Button className='btn btn-lg btn-success border-light btn-block' onClick={handleLogout}>Logout</Button></li>
   </ul>
  </nav>
  )

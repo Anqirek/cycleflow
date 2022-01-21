@@ -17,7 +17,7 @@ function handleBack(){
     function handleSubmit(e) {
         e.preventDefault()
         console.log('Signing up...')
-        fetch('/signupform',{
+        fetch('/SignupForm',{
         method: 'POST',
         headers:{
             'Content-Type': "application/json",

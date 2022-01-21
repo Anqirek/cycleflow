@@ -1,10 +1,11 @@
 import {useEffect,useState} from 'react'
 import PickupList from './PickupList'
+import Search from './Search'
 
 function Home() {
-// const [clientPickup, setClientPickup]=useState(true)
-const [items,setItems]=useState([]) 
-const itemURL = '/items'
+ const [items,setItems]=useState([])
+ const [search, setSearch]=useState("") 
+ const itemURL = '/items'
 
 useEffect(()=>{
  fetch(itemURL)
@@ -12,12 +13,14 @@ useEffect(()=>{
  .then((allItems) => setItems(allItems))
 },[])
 
-console.log(items)
+//  const filteredItems = items.filter((item)=> item.customer_id.toLowerCase().includes(search.toLowerCase()
+//  ))
 
     return (
-     <div>
-     <PickupList allItems = {items}/>
-     </div>
+     <main>
+      <Search search={search} setSearch={setSearch}/>
+      <PickupList allItems = {items}/>
+     </main>
     )
 }
 
