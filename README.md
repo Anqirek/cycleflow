@@ -4,10 +4,9 @@
 
 
 * React version: 17.0.2
-
 * Ruby version: 2.7.4p191
-
 * System dependencies:
+
 ![Screen Shot 2022-01-21 at 9 29 47 AM](https://user-images.githubusercontent.com/87537177/150544525-a5bf00e4-6db2-4e21-9e64-b87435f880ca.png)
 
 
