@@ -5,8 +5,6 @@
 body {
   background-size: auto;
   background-image:url('https://cdn.dribbble.com/users/1010633/screenshots/7381291/media/4dd84adceaea77b43010a1879310bb27.png?compress=1&resize=400x300');
-  /* background: rgb(34,33,37); */
-  /* background: radial-gradient(circle, rgba(150, 220, 232) 0%, rgb(150, 220, 232) 35%, rgb(151, 222, 238) 100%);  background-repeat: repeat; */
   margin-left: 150px;
   margin-right: 100px;
   padding: auto;
@@ -16,27 +14,50 @@ max-width: 450px;
 margin:auto;
 padding-top: 100px;
 }
+.signupform {
+ color:aliceblue;
+ max-width: 300px;
+ margin:auto;
+ font-size: x-large;
+ font-style: italic;
+ font-weight: 700;
+ font-family: 'Times New Roman', Times, serif;
+ padding-top: 50px;
+ padding-bottom: 5px;
+}
+
+.signuptitle{
+  padding-bottom: 10px;
+  align-items: center;
+}
+
+.rtn-btn{
+ color:aliceblue;
+ font-weight: 700;
+ font-family: 'Times New Roman', Times, serif;
+
+}
 
 .headerloginform {
-color:aliceblue;
-font-size: xx-large;
-font-style: italic;
-font-weight: 500;
-font-family: cursive;
-padding-top: 30px;
-margin: auto;
+ color:aliceblue;
+ font-size: xx-large;
+ font-style: italic;
+ font-weight: 500;
+ font-family: 'Times New Roman', Times, serif;
+ padding-top: 30px;
+ margin: auto;
 }
 
 .signinform {
-color:aliceblue;
-font-weight: 900;
-font-family: cursive;
+ color:aliceblue;
+ font-weight: 900;
+ font-family: 'Times New Roman', Times, serif;
 }
 
 .checkbox {
  color:aliceblue;
  font-weight: 700;
- font-family: cursive;
+ font-family: 'Times New Roman', Times, serif;
 }
 
 .PickupCard {
@@ -68,28 +89,25 @@ display: block;
 align-content: center;
 }
 
-/* .nav {
-  
-} */
 
 .searchbar {
 width: 100%;
 text-align: center;
 color:aliceblue;
 font-weight: 700;
-font-family: cursive;
+font-family: 'Times New Roman', Times, serif;
 }
 
 .pickup-requests{
   color:aliceblue;
   font-weight: 700;
-  font-family: cursive;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .navtitle {
   color:aliceblue;
   font-weight: 700;
-  font-family: cursive;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 ul {

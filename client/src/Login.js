@@ -1,16 +1,16 @@
 import React, {useState} from 'react'
 import { useHistory } from 'react-router-dom'
 
-function Login({setCourier, handleClick}) {
+function Login({setCourier,handleClick}) {
   
   const [email,setEmail]=useState('')
   const [password,setPassword]=useState('')
-  const history = useHistory()
+ 
 
   function handleLogin(e) {
     e.preventDefault()
 
-    fetch("/",{
+    fetch("/Login",{
       method: "POST",
       headers: {
         "Content-Type": "application/json",

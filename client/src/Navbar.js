@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button'
 import { useHistory } from 'react-router-dom'
 
 function Navbar({setLogout}) {
-const history = useHistory()
+ const history = useHistory()
 
  function handlePickup(){
      history.push('/PickupRequests')

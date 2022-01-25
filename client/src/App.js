@@ -5,12 +5,14 @@ import Navbar from './Navbar'
 import Home from './Home'
 import SignupForm from './SignupForm'
 import { BrowserRouter,Switch,Route,useHistory } from 'react-router-dom'
+import PickupRequests from './PickupRequests'
+import EditPickups from './EditPickups'
 
 
 function App() {
- const [courier,setCourier] = useState(null)
- const [display, setDisplay] = useState(true)
- const history = useHistory()
+ const [courier,setCourier]=useState(null)
+ const [signUp, setSignUp]=useState(true)
+ const previous=useHistory()
 
 
     useEffect(() => {
@@ -22,30 +24,37 @@ function App() {
       });
     }, []);
 
-    function handleDisplay() {
-      setDisplay((current) => !current)
-      }
-
+      
+    const handleBack =()=>{
+      previous.push('/Login')
+    }
+  
      function handleClick(){
-      history.push('/SignupForm')
+      setSignUp((currentSide) => !currentSide)
      }  
 
-  if (!courier) return  <Login setCourier = {setCourier} handleClick={handleClick} />
+  if (!courier) return signUp ? <Login setCourier={setCourier} handleClick={handleClick}/> : <SignupForm setCourier={setCourier} handleBack={handleBack}/>
 
   return (
     <BrowserRouter>
      <Navbar setLogout = {setCourier}/>
       <main className="App">
         <Switch>
-          <Route exact path="/SignupForm">
-           <SignupForm setCourier={setCourier} handleDisplay = {handleDisplay}/>
+          <Route path='/Home'>
+           <Home courier={courier} />
           </Route>
-          <Route>
-           <Home exact path='/Home' courier={courier} />
+          <Route path="/SignupForm">
+           <SignupForm setCourier={setCourier} handleBack={handleBack}/>
           </Route>
-          <Route exact path="/">
-           <Login setCourier = {setCourier} handleClick={handleClick} />
+          <Route path='/PickupRequests'>
+           <PickupRequests />
           </Route>
+          <Route path='EditPickups'>
+           <EditPickups/>
+          </Route>
+          {/* <Route path="/Login">
+           <Login setCourier={setCourier} handleClick={handleClick} />
+          </Route> */}
         </Switch>
       </main>
     </BrowserRouter>
