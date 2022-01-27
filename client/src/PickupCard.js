@@ -2,7 +2,7 @@ import {Button,CardGroup,Card} from 'react-bootstrap'
 
 import { useHistory } from 'react-router-dom'
 
-function PickupCard({bottle,size,count,location,customer}){
+function PickupCard({bottle,size,count,location,oneCustomer}){
  const history = useHistory()
 
  function handlePick() {
@@ -21,7 +21,7 @@ return (
     <Card.Img id='card-img' variant='top'className="rounded sm-auto d-block" src='https://media4.giphy.com/media/Vzq3HO2Cid0CHSW2h6/giphy.gif?cid=ecf05e47zhg3xk0tw7vic0kqifjw5yhtqn01gvi5zvq55a1m&rid=giphy.gif&ct=g'/>
     <Card.Body>
     <Card.Title className='text-center'>
-     Customer: {customer.username}
+     Customer: {oneCustomer}
     </Card.Title> 
     <Card.Text className='text-center'>
      Bottle: {bottle}

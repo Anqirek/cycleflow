@@ -17,11 +17,14 @@ useEffect(()=>{
 
  const filteredItems = items.filter((item)=> item.bottle.toLowerCase().includes(search.toLowerCase()
  ))
+ const filterCustomer = items.map((oneName)=>oneName)
+//  const filterOneCustomer=filterCustomer.find(id)
+ console.log(filterCustomer)
 
     return (
      <main>
       <Search search={search} setSearch={setSearch}/>
-      <PickupList allItems={filteredItems}/>
+      <PickupList allItems={filteredItems} oneCustomer={filterCustomer}/>
      </main>
     )
 }
