@@ -1,6 +1,6 @@
 import PickupCard from './PickupCard'
 
-function PickupList({allItems}){
+function PickupList({allItems, oneCustomer}){
     const renderItems = allItems.map((item)=> {
      return <PickupCard
       key = {item.id}
@@ -9,6 +9,7 @@ function PickupList({allItems}){
       count = {item.count}
       location = {item.location}
       customer = {item.customer_id}
+      oneCustomer={oneCustomer}
      />
  })
     return (

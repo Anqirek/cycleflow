@@ -5,9 +5,7 @@ function SignupForm({setCourier, handleBack}){
 const [name, setName]=useState('')
 const [email, setEmail]=useState('')
 const [password, setPassword]=useState('')
-const [address, setAddress]=useState('')
-// const [current, setCurrent]=useState(true)
-  
+const [address, setAddress]=useState('')  
 
   function handleSubmit(e) {
         e.preventDefault()

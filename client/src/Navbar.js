@@ -26,8 +26,8 @@ return (
   </a>
   <ul>
    <li className='nav-item active'><Button className='btn btn-lg btn-success border-light btn-block' onClick={handleHome}>Home</Button></li>
-   <li className='nav-item active'><Button className='btn btn-lg btn-success border-light btn-block' onClick={handlePickup}>Pickups</Button></li>
-   <li className='nav-item active'><Button className='btn btn-lg btn-success border-light btn-block' onClick={handleLogout}>Logout</Button></li>
+   <li className='nav-item'><Button className='btn btn-lg btn-success border-light btn-block' onClick={handlePickup}>Pickups</Button></li>
+   <li className='nav-item'><Button className='btn btn-lg btn-success border-light btn-block' onClick={handleLogout}>Logout</Button></li>
   </ul>
  </nav>
  )

@@ -15,7 +15,7 @@ function PickupCard({bottle,size,count,location,oneCustomer}){
 
 return ( 
 
- <div className="PickupCard" style={{}}>
+ <div className="PickupCard" >
   <CardGroup>
    <Card className="text-center" style ={{color: '#000', width:'20rem'}}>
     <Card.Img id='card-img' variant='top'className="rounded sm-auto d-block" src='https://media4.giphy.com/media/Vzq3HO2Cid0CHSW2h6/giphy.gif?cid=ecf05e47zhg3xk0tw7vic0kqifjw5yhtqn01gvi5zvq55a1m&rid=giphy.gif&ct=g'/>

@@ -13,18 +13,20 @@ useEffect(()=>{
  fetch(itemURL)
  .then(res => res.json())
  .then((allItems) => setItems(allItems))
+ 
 },[])
 
- const filteredItems = items.filter((item)=> item.bottle.toLowerCase().includes(search.toLowerCase()
+const oneCustomer=items.map((item)=>item.customer)
+// const filterCustomer = items.map((oneName)=>oneName)
+const filteredItems = items.filter((item)=> item.bottle.toLowerCase().includes(search.toLowerCase()
  ))
- const filterCustomer = items.map((oneName)=>oneName)
-//  const filterOneCustomer=filterCustomer.find(id)
- console.log(filterCustomer)
+
+console.log(oneCustomer)
 
     return (
      <main>
       <Search search={search} setSearch={setSearch}/>
-      <PickupList allItems={filteredItems} oneCustomer={filterCustomer}/>
+      <PickupList allItems={filteredItems} />
      </main>
     )
 }
