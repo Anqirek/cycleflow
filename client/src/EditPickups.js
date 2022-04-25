@@ -31,8 +31,14 @@ function EditPickups({item}){
  }
 
  return (
-   <div>
-     <form onSubmit={handleEdit}> 
+  <>
+   <header>
+    <h4 className="editform-header">
+    Edit Changes
+    </h4>
+   </header>
+   <div className="editform-text">
+     <form className="editform" onSubmit={handleEdit}> 
        <input
         type='text'
         value={bottle}
@@ -55,9 +61,10 @@ function EditPickups({item}){
         required
         onChange={(e)=>setCount(e.target.value)}
        />
-       <button className= 'btn btn-lg btn-success border-light btn-block' onClick={handleRoute}>Update Items</button>     
       </form>
      </div>
+     <button className= 'edit-btn btn-lg btn-success border-light btn-block' onClick={handleRoute}>Update Items</button>     
+  </>
  )
 }
 

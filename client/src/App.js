@@ -7,6 +7,12 @@ import SignupForm from './SignupForm'
 import { BrowserRouter,Switch,Route,useHistory } from 'react-router-dom'
 import PickupRequests from './PickupRequests'
 import EditPickups from './EditPickups'
+import { GoogleMap,
+useLoadScript,
+Marker,
+InfoWindow,}
+from "@react-google-maps/api";
+// import {formatRelative} from "date-fns";
 
 
 function App() {
@@ -49,7 +55,7 @@ function App() {
           <Route path='/PickupRequests'>
            <PickupRequests />
           </Route>
-          <Route path='EditPickups'>
+          <Route path='/EditPickups'>
            <EditPickups/>
           </Route>
           {/* <Route path="/Login">
