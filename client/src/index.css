@@ -87,6 +87,15 @@ background-color: rgb(109, 218, 176);
   margin: auto;
 }
 
+
+/* Navbar buttons */
+
+.nav-item{
+display:flex;
+justify-content: center;
+padding-left:  140px;
+}
+
 .navbar {
 display: block;
 align-content: center;
