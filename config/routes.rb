@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+ get '/hello', to: 'application#hello_world'
+ get '/me', to: 'couriers#show'
+ get "/home", to: 'couriers#show'
+ get '/courier', to: 'couriers#show'
+ get '/items', to: 'items#index'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+ post '/', to: 'sessions#create'
+ post '/signupform', to: 'couriers#create'
 
-  get '/hello', to: 'application#hello_world'
+ delete '/logout', to: 'sessions#destroy'
 
-  # get '*path',
-  # to: 'fallback#index',
-  # constraints: ->(req) { !req.xhr? && req.format.html? }
 end

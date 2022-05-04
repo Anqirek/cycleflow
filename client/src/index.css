@@ -1,13 +1,174 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-size: auto;
+  background-image:url('https://cdn.dribbble.com/users/1010633/screenshots/7381291/media/4dd84adceaea77b43010a1879310bb27.png?compress=1&resize=400x300');
+  margin-left: 150px;
+  margin-right: 100px;
+  padding: auto;
+}
+
+/* Login Page */
+
+.loginform {
+max-width: 450px;
+margin:auto;
+padding-top: 100px;
+}
+.signupform {
+ color:aliceblue;
+ max-width: 300px;
+ margin:auto;
+ font-size: x-large;
+ font-style: italic;
+ font-weight: 700;
+ font-family: 'Times New Roman', Times, serif;
+ padding-top: 50px;
+ padding-bottom: 5px;
+}
+
+.signuptitle{
+  padding-bottom: 10px;
+  align-items: center;
+}
+
+.rtn-btn{
+ color:aliceblue;
+ font-weight: 700;
+ font-family: 'Times New Roman', Times, serif;
+
+}
+
+.headerloginform {
+ color:aliceblue;
+ font-size: xx-large;
+ font-style: italic;
+ font-weight: 500;
+ font-family: 'Times New Roman', Times, serif;
+ padding-top: 30px;
+ margin: auto;
+}
+
+.signinform {
+ color:aliceblue;
+ font-weight: 900;
+ font-family: 'Times New Roman', Times, serif;
+}
+
+.checkbox {
+ color:aliceblue;
+ font-weight: 700;
+ font-family: 'Times New Roman', Times, serif;
+}
+
+/* Card page */
+
+.PickupCard {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  padding: 30px;
+  list-style-type: none;
+  float: left;
+  margin:auto;
+  
+}
+
+.btn {
+background-color: rgb(109, 218, 176);
+}
+
+#card-img {
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  width: 250px;
+  height: 250px;
+  margin: auto;
+}
+
+
+/* Navbar buttons */
+
+.nav-item{
+display:flex;
+justify-content: center;
+padding-left:  140px;
+}
+
+.navbar {
+display: block;
+align-content: center;
+}
+
+.navtitle {
+  color:aliceblue;
+  font-weight: 700;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Search */
+
+.searchbar {
+width: 100%;
+text-align: center;
+color:aliceblue;
+font-weight: 500;
+font-family: 'Times New Roman', Times, serif;
+}
+
+.pickup-requests{
+  color:aliceblue;
+  font-weight: 700;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  display: inline;
+  float: left;
+}
+
+@media (max-width: 800px) {
+  .PickupCard {
+    flex-direction: column;
+  }
+}
+
+/* Edit Pickups */
+
+.editform {
+  color:aliceblue;
+  max-width: 300%;
+  margin-right: 50%;
+  font-size: x-large;
+  font-weight: 700;
+  font-family: 'Times New Roman', Times, serif;
+  padding-top: 50px;
+  padding-bottom: 10px;
+}
+
+.edit-btn {
+margin:auto;
+margin-left: 45%;
+}
+
+.editform-text{
+  margin-left: 40%;
+  
+
+}
+
+.editform-header{
+  margin-left: 45%;
+  padding-top: 5%;
+  color: aliceblue;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 500;
+  text-decoration: underline;
 }

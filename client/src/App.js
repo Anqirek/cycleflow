@@ -1,25 +1,68 @@
-import {useState,useEffect} from 'react'
-import {BrowserRouter,Switch,Route} from 'react-router-dom'
+import React from 'react'
+import { useState,useEffect } from 'react'
+import Login from './Login'
+import Navbar from './Navbar'
+import Home from './Home'
+import SignupForm from './SignupForm'
+import { BrowserRouter,Switch,Route,useHistory } from 'react-router-dom'
+import PickupRequests from './PickupRequests'
+import EditPickups from './EditPickups'
+import { GoogleMap,
+useLoadScript,
+Marker,
+InfoWindow,}
+from "@react-google-maps/api";
+// import {formatRelative} from "date-fns";
+
 
 function App() {
-  const [count,setCount]=useState(0)
-    useEffect(()=> {
-      fetch('/hello')
-      .then((r)=>r.json())
-      .then((data)=>setCount(data.count))
-    },[])
+ const [courier,setCourier]=useState(null)
+ const [signUp, setSignUp]=useState(true)
+ const previous=useHistory()
+
+
+    useEffect(() => {
+      fetch("/me")
+      .then((response) => {
+        if (response.ok) {
+          response.json().then((courier) => setCourier(courier));
+        }
+      });
+    }, []);
+
+      
+    const handleBack =()=>{
+      previous.push('/Login')
+    }
+  
+     function handleClick(){
+      setSignUp((currentSide) => !currentSide)
+     }  
+
+  if (!courier) return signUp ? <Login setCourier={setCourier} handleClick={handleClick}/> : <SignupForm setCourier={setCourier} handleBack={handleBack}/>
+
   return (
     <BrowserRouter>
-      <div className="App">
+     <Navbar setLogout = {setCourier}/>
+      <main className="App">
         <Switch>
-          <Route path="/testing">
-            <h1>Test Route</h1>
+          <Route path='/Home'>
+           <Home courier={courier} />
           </Route>
-          <Route path="/">
-            <h1>Page Count: {count}</h1>
+          <Route path="/SignupForm">
+           <SignupForm setCourier={setCourier} handleBack={handleBack}/>
           </Route>
+          <Route path='/PickupRequests'>
+           <PickupRequests />
+          </Route>
+          <Route path='/EditPickups'>
+           <EditPickups/>
+          </Route>
+          {/* <Route path="/Login">
+           <Login setCourier={setCourier} handleClick={handleClick} />
+          </Route> */}
         </Switch>
-      </div>
+      </main>
     </BrowserRouter>
   );
 }
