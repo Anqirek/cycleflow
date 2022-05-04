@@ -56,7 +56,7 @@ function App() {
            <PickupRequests />
           </Route>
           <Route path='/EditPickups'>
-           <EditPickups/>
+           <EditPickups item = {item}/>
           </Route>
           {/* <Route path="/Login">
            <Login setCourier={setCourier} handleClick={handleClick} />
