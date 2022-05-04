@@ -1,30 +1,26 @@
-import React, {useState} from 'react'
-import {useHistory} from 'react-router-dom'
+import React, {useState, useEffect} from 'react'
 
 function EditPickups({item}){
  
  const [bottle, setBottle]=useState('')
  const [size, setSize]=useState('')
  const [count,setCount]=useState('0')
- const reroute=useHistory()
-
-  function handleRoute(){
-    reroute.push('/EditPickups')
-  }
+ const [id, setId]=useState(null)
+ 
 
  function handleEdit(e) {
   e.preventDefault()
   fetch(`/items/${item.id}`,{
    method: "PATCH",
+   body: JSON.stringify({
+    item: id,
+    bottle: bottle,
+    size: size,
+    count: count,
+   }),
    headers: {
     "Content-Type": "application/json",
     },
-     body: JSON.stringify({
-      item: item.id,
-      bottle: bottle,
-      size: size,
-      count: count,
-     }),
   })
    .then(res=>res.json())
    .then((updatedItem)=>item(updatedItem))
@@ -63,7 +59,7 @@ function EditPickups({item}){
        />
       </form>
      </div>
-     <button className= 'edit-btn btn-lg btn-success border-light btn-block' onClick={handleRoute}>Update Items</button>     
+     <button className= 'edit-btn btn-lg btn-success border-light btn-block' onClick={handleEdit}>Update Items</button>     
   </>
  )
 }

@@ -1,5 +1,4 @@
 import {Button,CardGroup,Card} from 'react-bootstrap'
-
 import { useHistory } from 'react-router-dom'
 
 function PickupCard({bottle,size,count,location,oneCustomer}){

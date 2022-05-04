@@ -63,6 +63,8 @@ padding-top: 100px;
  font-family: 'Times New Roman', Times, serif;
 }
 
+/* Card page */
+
 .PickupCard {
   display: flex;
   align-items: center;
@@ -101,22 +103,23 @@ display: block;
 align-content: center;
 }
 
-
-.searchbar {
-width: 100%;
-text-align: center;
-color:aliceblue;
-font-weight: 700;
-font-family: 'Times New Roman', Times, serif;
-}
-
-.pickup-requests{
+.navtitle {
   color:aliceblue;
   font-weight: 700;
   font-family: 'Times New Roman', Times, serif;
 }
 
-.navtitle {
+/* Search */
+
+.searchbar {
+width: 100%;
+text-align: center;
+color:aliceblue;
+font-weight: 500;
+font-family: 'Times New Roman', Times, serif;
+}
+
+.pickup-requests{
   color:aliceblue;
   font-weight: 700;
   font-family: 'Times New Roman', Times, serif;
