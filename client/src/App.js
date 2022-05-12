@@ -18,7 +18,16 @@ from "@react-google-maps/api";
 function App() {
  const [courier,setCourier]=useState(null)
  const [signUp, setSignUp]=useState(true)
+ const [items,setItems]=useState([])
+ const itemURL = '/items'
  const previous=useHistory()
+
+ useEffect(()=>{
+  fetch(itemURL)
+  .then(res => res.json())
+  .then((allItems) => setItems(allItems))
+  
+ },[])
 
 
     useEffect(() => {
@@ -47,7 +56,7 @@ function App() {
       <main className="App">
         <Switch>
           <Route path='/Home'>
-           <Home courier={courier} />
+           <Home courier={courier} item={items} />
           </Route>
           <Route path="/SignupForm">
            <SignupForm setCourier={setCourier} handleBack={handleBack}/>
@@ -56,7 +65,7 @@ function App() {
            <PickupRequests />
           </Route>
           <Route path='/EditPickups'>
-           <EditPickups item = {item}/>
+           <EditPickups item={items}/>
           </Route>
           {/* <Route path="/Login">
            <Login setCourier={setCourier} handleClick={handleClick} />

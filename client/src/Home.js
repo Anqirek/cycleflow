@@ -1,24 +1,15 @@
-import {useEffect,useState} from 'react'
+import {useState} from 'react'
 import PickupList from './PickupList'
 import Search from './Search'
-import EditPickups from './EditPickups'
  
 
-function Home() {
- const [items,setItems]=useState([])
+function Home({item}) {
+ 
  const [search, setSearch]=useState("") 
- const itemURL = '/items'
 
-useEffect(()=>{
- fetch(itemURL)
- .then(res => res.json())
- .then((allItems) => setItems(allItems))
- 
-},[])
 
-const oneCustomer=items.map((item)=>item.customer)
-// const filterCustomer = items.map((oneName)=>oneName)
-const filteredItems = items.filter((item)=> item.bottle.toLowerCase().includes(search.toLowerCase()
+ const oneCustomer=item.map((oneItem)=>oneItem.customer)
+ const filteredItems = item.filter((oneItem)=> oneItem.bottle.toLowerCase().includes(search.toLowerCase()
  ))
 
 console.log(oneCustomer)

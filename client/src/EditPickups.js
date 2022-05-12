@@ -5,12 +5,12 @@ function EditPickups({item}){
  const [bottle, setBottle]=useState('')
  const [size, setSize]=useState('')
  const [count,setCount]=useState('0')
- const [id, setId]=useState(null)
+ const [id, setId]=useState([])
  
 
  function handleEdit(e) {
   e.preventDefault()
-  fetch(`/items/${item.id}`,{
+  fetch(`http://localhost:4000/items/${item.id}`,{
    method: "PATCH",
    body: JSON.stringify({
     item: id,
@@ -23,7 +23,7 @@ function EditPickups({item}){
     },
   })
    .then(res=>res.json())
-   .then((updatedItem)=>item(updatedItem))
+   .then((updatedItem)=>setId(updatedItem))
  }
 
  return (
