@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-function Login({setCourier,handleClick}) {
+function Login({setCourier,handleClick, setError}) {
   
   const [email,setEmail]=useState('')
   const [password,setPassword]=useState('')
@@ -9,7 +9,7 @@ function Login({setCourier,handleClick}) {
   function handleLogin(e) {
     e.preventDefault()
 
-    fetch("/Login",{
+    fetch("/",{
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -21,7 +21,12 @@ function Login({setCourier,handleClick}) {
     }).then((resp) => {
         if (resp.ok) {
             resp.json().then((courier) => setCourier(courier))
-          };
+          }
+
+          else {
+           return  setError("Incorrect Username or Password.")
+          }
+
         })
     }
 

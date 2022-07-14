@@ -18,7 +18,11 @@ from "@react-google-maps/api";
 function App() {
  const [courier,setCourier]=useState(null)
  const [signUp, setSignUp]=useState(true)
+ const [error, setError]=useState('')
  const previous=useHistory()
+ const [items,setItems]=useState([])
+ const [search, setSearch]=useState("") 
+ const itemURL = '/items'
 
 
     useEffect(() => {
@@ -30,16 +34,22 @@ function App() {
       });
     }, []);
 
+    useEffect(()=>{
+      fetch(itemURL)
+      .then(res => res.json())
+      .then((allItems) => setItems(allItems))
       
+     },[])
+
     const handleBack =()=>{
-      previous.push('/Login')
+      previous.push('/')
     }
   
      function handleClick(){
       setSignUp((currentSide) => !currentSide)
      }  
 
-  if (!courier) return signUp ? <Login setCourier={setCourier} handleClick={handleClick}/> : <SignupForm setCourier={setCourier} handleBack={handleBack}/>
+  if (!courier) return signUp ? <Login setCourier={setCourier} handleClick={handleClick} setError={setError}/> : <SignupForm setCourier={setCourier} handleBack={handleBack}/>
 
   return (
     <BrowserRouter>
@@ -47,7 +57,7 @@ function App() {
       <main className="App">
         <Switch>
           <Route path='/Home'>
-           <Home courier={courier} />
+           <Home courier={courier} items={items} setItems={setItems} search={search} setSearch={setSearch} />
           </Route>
           <Route path="/SignupForm">
            <SignupForm setCourier={setCourier} handleBack={handleBack}/>
@@ -56,11 +66,8 @@ function App() {
            <PickupRequests />
           </Route>
           <Route path='/EditPickups'>
-           <EditPickups/>
+           <EditPickups item={items} setItem={setItems}/>
           </Route>
-          {/* <Route path="/Login">
-           <Login setCourier={setCourier} handleClick={handleClick} />
-          </Route> */}
         </Switch>
       </main>
     </BrowserRouter>

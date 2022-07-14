@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 
-function EditPickups({item}){
+function EditPickups({item,setItem}){
  
  const [bottle, setBottle]=useState('')
  const [size, setSize]=useState('')
@@ -23,14 +23,15 @@ function EditPickups({item}){
     },
   })
    .then(res=>res.json())
-   .then((updatedItem)=>item(updatedItem))
+   .then((updatedItem)=>setItem(updatedItem))
  }
+
 
  return (
   <>
    <header>
     <h4 className="editform-header">
-    Edit Changes
+      Edit Changes
     </h4>
    </header>
    <div className="editform-text">
