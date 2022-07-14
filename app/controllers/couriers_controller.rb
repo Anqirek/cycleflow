@@ -20,7 +20,6 @@ skip_before_action :authorize, only: :create
      else
         render json: {error: 'Not Authorized'}, status: :unauthorized
      end
-    end
 
     
     private
