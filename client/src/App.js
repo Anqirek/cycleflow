@@ -21,18 +21,10 @@ function App() {
  const [error, setError]=useState('')
  const previous=useHistory()
  const [items,setItems]=useState([])
- const [search, setSearch]=useState("") 
+ const [search, setSearch]=useState("")
+ 
  const itemURL = '/items'
 
-
-    useEffect(() => {
-      fetch("/me")
-      .then((response) => {
-        if (response.ok) {
-          response.json().then((courier) => setCourier(courier));
-        }
-      });
-    }, []);
 
     useEffect(()=>{
       fetch(itemURL)
@@ -40,6 +32,15 @@ function App() {
       .then((allItems) => setItems(allItems))
       
      },[])
+
+     useEffect(() => {
+      fetch("/me")
+      .then((response) => {
+        if (response.ok) {
+          response.json().then((courier) => setCourier(courier));
+        }
+      });
+    }, []);
 
     const handleBack =()=>{
       previous.push('/')

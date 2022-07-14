@@ -21,14 +21,10 @@ function Login({setCourier,handleClick, setError}) {
     }).then((resp) => {
         if (resp.ok) {
             resp.json().then((courier) => setCourier(courier))
-          }
-
-          else {
-           return  setError("Incorrect Username or Password.")
-          }
-
+          };
         })
     }
+
 
   return (
    

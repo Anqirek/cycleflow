@@ -14,7 +14,6 @@ skip_before_action :authorize, except: :index
       else
         render json: { error: "Item not found" }, status: :not_found
       end
-     end
     end
 
     private

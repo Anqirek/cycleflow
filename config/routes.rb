@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
 
+ resources :items, only: [:index,:update]
+ 
+
  get '/me', to: 'couriers#show'
  get "/home", to: 'couriers#show'
  get '/courier', to: 'couriers#show'
  get '/items', to: 'items#index'
 
  patch '/items/:id', to: 'items#update'
+
 
  post '/', to: 'sessions#create'
  post '/SignupForm', to: 'couriers#create'
