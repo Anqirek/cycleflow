@@ -3,15 +3,18 @@ import Search from './Search'
 
  
 
-function Home({search,setSearch, items}) {
-const oneCustomer=items.map((item)=>item.customer)
-const filteredItems = items.filter((item)=> item.bottle.toLowerCase().includes(search.toLowerCase()
- ))
-console.log(items)
+function Home({search,setSearch, items,id,setItem}) {
+ const filteredItems = Object.entries(items).map(([key, value]) => {
+     
+
+ return {[key]:value}
+ })
+ 
+
     return (
      <main>
       <Search search={search} setSearch={setSearch}/>
-      <PickupList allItems={filteredItems} />
+      <PickupList allItems ={filteredItems} key={id} />
      </main>
     )
 }

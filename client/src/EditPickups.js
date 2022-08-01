@@ -1,18 +1,19 @@
 import React, {useState} from 'react'
 
-function EditPickups({item,setItem}){
+function EditPickups({items,id,setItem,itemEntries,itemValue}){
  
  const [bottle, setBottle]=useState('')
  const [size, setSize]=useState('')
  const [count,setCount]=useState('0')
- const [id, setId]=useState(null)
- 
+
+
 
  function handleEdit(e) {
   e.preventDefault()
-  fetch(`/items/${item.id}`,{
+  fetch(`/items/${items.id}`,{
    method: "PATCH",
    body: JSON.stringify({
+    
     item: id,
     bottle: bottle,
     size: size,

@@ -9,7 +9,7 @@ function Login({setCourier,handleClick, setError}) {
   function handleLogin(e) {
     e.preventDefault()
 
-    fetch("/",{
+    fetch("/login",{
       method: "POST",
       headers: {
         "Content-Type": "application/json",

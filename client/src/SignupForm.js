@@ -10,7 +10,7 @@ const [address, setAddress]=useState('')
   function handleSubmit(e) {
         e.preventDefault()
         console.log('Signing up...')
-        fetch('/SignupForm',{
+        fetch('/signupform',{
         method: 'POST',
         headers:{
             'Content-Type': "application/json",

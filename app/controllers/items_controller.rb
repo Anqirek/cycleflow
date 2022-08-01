@@ -19,7 +19,7 @@ skip_before_action :authorize, except: :index
     private
 
     def item_params
-     params.permit(:item, :bottle, :size, :count)
+     params.permit( :id, :item,:bottle, :size, :count)
     end
 
 end

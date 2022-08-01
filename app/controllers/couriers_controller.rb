@@ -20,6 +20,7 @@ skip_before_action :authorize, only: :create
      else
         render json: {error: 'Not Authorized'}, status: :unauthorized
      end
+   end
 
     
     private
@@ -35,5 +36,6 @@ skip_before_action :authorize, only: :create
 
     def render_not_found
      render json: {error: 'Courier not found.'}, status: :not_found
-    end   
+    end
+
 end
