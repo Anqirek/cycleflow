@@ -1,16 +1,14 @@
+import React from 'react'
 import {Button,CardGroup,Card} from 'react-bootstrap'
 import { useHistory } from 'react-router-dom'
 
-function PickupCard({bottle,size,count,location,id}){
+function PickupCard({bottle,size,count,location}){
  const history = useHistory()
 
  function handlePick() {
   history.push('/PickupRequests') 
   }
 
-  function handleEdit() {
-   history.push('/EditPickups')
-  }
 
 return ( 
 
@@ -32,7 +30,6 @@ return (
      Location: {location}
     </Card.Text> 
     <Button onClick={handlePick} type='submit'className='btn btn-lg btn-success border-light btn-block'>Pickup Bottles</Button>
-    <Button onClick={handleEdit} type='submit'className='btn btn-lg btn-success border-light btn-block'>Edit</Button>
    </Card.Body>
   </Card>
  </CardGroup>

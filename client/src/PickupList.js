@@ -1,20 +1,20 @@
 import PickupCard from './PickupCard'
 
-function PickupList({allItems, id}){
+function PickupList({allItems}){
     const renderItems = allItems.map((item)=> {
      return <PickupCard
-      key = {id}
+      key = {item.id}
       bottle = {item.bottle}
       size = {item.size}
       count = {item.count}
       location = {item.location}
-      customer = {item.customer_id}
      />
  })
+ 
 
     return (
         <ul>{renderItems}</ul>
     )
 }
 
-export default PickupList
+export default PickupList;

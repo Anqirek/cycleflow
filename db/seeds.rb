@@ -1,13 +1,13 @@
 
 puts "Seeding Customers...🙋🏻🙋🏽‍♂️🙋🏾‍♀️"
 
-10.times do
+5.times do
 customer = Customer.create(username:Faker::Name.name, email: Faker::Internet.email, address:Faker::Address.full_address )
 end
 
 puts "Seeding Courier...🚚"
 
-10.times do
+5.times do
 courier = Courier.create(
     name:Faker::Name.name, 
     email:Faker::Internet.email,
@@ -17,7 +17,7 @@ end
 
 puts "Seeding Items...♳♴♵"
 
-10.times do
+5.times do
 
 item = Item.create(
      bottle:["Plastic","Glass","Metal"].sample,
@@ -43,7 +43,7 @@ end
 
 puts "Seeding Pickups...📦"
 
-10.times do
+5.times do
 pickup = Pickup.create(item_id: Item.all.sample, courier_id: Courier.all.sample)
 end
 

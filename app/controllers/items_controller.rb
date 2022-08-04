@@ -6,11 +6,20 @@ skip_before_action :authorize, except: :index
      render json: items, status: :ok
     end
 
-    def update
-        item = Item.find_by(id: params[:id])
-      if item
-        item.update(item_params)
+    def show
+        item=Item.find_by(id:session[:item_id])
+    if  item
         render json: item
+    else
+        render json: {error: 'Not Found'}, status: :not_found
+        end
+    end
+
+    def update
+        item = Item.find(id:params[:id])
+      if item
+         item.update(item_params)
+         render json: item
       else
         render json: { error: "Item not found" }, status: :not_found
       end
@@ -19,7 +28,7 @@ skip_before_action :authorize, except: :index
     private
 
     def item_params
-     params.permit( :id, :item,:bottle, :size, :count)
+     params.permit(:bottle, :size, :count)
     end
 
 end

@@ -14,6 +14,7 @@ body {
 
 }
 
+
 /* Login Page */
 
 .loginform {
@@ -80,6 +81,7 @@ padding-top: 100px;
 
 }
 
+
 /* Card page */
 
 .PickupCard {
@@ -137,6 +139,7 @@ align-content: center;
   
 }
 
+
 /* Search */
 
 .searchbar {
@@ -177,41 +180,60 @@ li {
 
 }
 
-/* Edit Pickups */
 
-.editform {
+/* Update Items */
 
-  color:aliceblue;
-  max-width: 300%;
-  margin-right: 50%;
-  font-size: x-large;
-  font-weight: 700;
+.updateitems-form {
+  padding: 2rem 1rem;
+  margin: 2rem 0;
+  background-color: aliceblue;
   font-family: 'Times New Roman', Times, serif;
-  padding-top: 50px;
-  padding-bottom: 10px;
-
 }
 
-.edit-btn {
-
-margin:auto;
-margin-left: 45%;
-
+.updateitems-form form {
+  display: flex;
+  justify-content: center;
 }
 
-.editform-text {
-
-  margin-left: 40%;
-  
+.updateitems-form input {
+  margin-right: 2rem;
+  flex: 1;
 }
 
-.editform-header {
+.updateitems-form button {
+  width: 150px;
+}
 
-  margin-left: 45%;
-  padding-top: 5%;
-  color: aliceblue;
+
+/* new Item form */
+
+.new-item-form {
+  padding: 2rem 1rem;
+  margin: 2rem 0;
+  background-color: aliceblue;
   font-family: 'Times New Roman', Times, serif;
-  font-weight: 500;
-  text-decoration: underline;
+}
 
+.new-item-form form {
+  display: flex;
+  justify-content: center;
+}
+
+.new-item-form input {
+  margin-right: 2rem;
+  flex: 1;
+}
+
+.new-item-form button {
+  width: 150px;
+}
+
+input {
+  padding: 0.25rem;
+  border: none;
+  font-family: inherit;
+  font-size: 1.2em;
+  border-bottom: 2px solid gray;
+  transition: all 0.2s;
+  width: 100%;
 }
