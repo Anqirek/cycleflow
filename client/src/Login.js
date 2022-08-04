@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-function Login({setCourier,handleClick, setError}) {
+function Login({setCourier,handleClick}) {
   
   const [email,setEmail]=useState('')
   const [password,setPassword]=useState('')

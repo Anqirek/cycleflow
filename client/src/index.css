@@ -14,6 +14,10 @@ body {
 
 }
 
+main {
+  padding: 0 1rem;
+}
+
 
 /* Login Page */
 
@@ -85,21 +89,40 @@ padding-top: 100px;
 /* Card page */
 
 .PickupCard {
-
-  display: flex;
+  padding: 30px;
+  display:block;
   align-items: center;
   align-content: center;
-  padding: 30px;
   list-style-type: none;
-  float: left;
-  margin:auto;
+  margin: auto;
+  font-family: 'Times New Roman', Times, serif;
+  color: aliceblue;
   
 }
 
-.btn {
+.PickupCard button {
+  margin-top: 0.5rem;
+  background-color: rgb(109, 218, 176);
+}
 
-background-color: rgb(109, 218, 176);
 
+@media (min-width: 768px) {
+
+  .PickupCard {
+    width: calc(33% - 2rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .PickupCard {
+    width: calc(25% - 2rem);
+  }
+}
+
+@media (min-width: 1200px) {
+  .PickupCard {
+    width: calc(20% - 2rem);
+  }
 }
 
 #card-img {
@@ -116,29 +139,66 @@ background-color: rgb(109, 218, 176);
 
 /* Navbar buttons */
 
-.nav-item {
-
-display:flex;
-justify-content: center;
-padding-left:  140px;
-
-}
-
-.navbar {
-
-display: block;
-align-content: center;
-
-}
-
-.navtitle {
-
+.nav-title {
+  text-align: center;
+  size:large;
   color:aliceblue;
-  font-weight: 700;
   font-family: 'Times New Roman', Times, serif;
+}
+
+.navmenu {
+  list-style-type: none;
   
 }
 
+.nav-buttons {
+  list-style-type: none;
+  margin-bottom: 20%;
+}
+
+
+.nav-buttons li button {
+  list-style-type: none;
+
+}
+
+.nav-button1 {
+  background-color: rgb(109, 218, 176);
+  color:rgb(240, 248, 255);
+  border: 2px solid aliceblue;
+  padding: 14px 40px;
+  position: absolute;
+  top: 0px;
+  right: 275px;
+  
+}
+.nav-button2 {
+  background-color: rgb(109, 218, 176);
+  color:rgb(240, 248, 255);
+  border: 2px solid aliceblue;
+  padding: 14px 40px;
+  position: absolute;
+  top: 0px;
+  right: 134px;
+}
+
+.nav-button3{
+  background-color: rgb(109, 218, 176);
+  color:rgb(240, 248, 255);
+  border: 2px solid aliceblue;
+  padding: 14px 40px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.nav-buttons li button:hover{
+  background-color: rgb(1, 136, 1);
+}
+
+.nav-buttons li button:not(:last-child){
+  border-right: none;
+}
 
 /* Search */
 
@@ -159,18 +219,6 @@ font-family: 'Times New Roman', Times, serif;
   font-family: 'Times New Roman', Times, serif;
 }
 
-ul {
-
-  list-style-type: none;
-
-}
-
-li {
-
-  display: inline;
-  float: left;
-
-}
 
 @media (max-width: 800px) {
 
@@ -186,8 +234,9 @@ li {
 .updateitems-form {
   padding: 2rem 1rem;
   margin: 2rem 0;
-  background-color: aliceblue;
+  background-color: rgb(240, 248, 255,0.7);
   font-family: 'Times New Roman', Times, serif;
+ 
 }
 
 .updateitems-form form {
@@ -202,6 +251,8 @@ li {
 
 .updateitems-form button {
   width: 150px;
+  background-color: rgb(109, 218, 176);
+  color:rgb(240, 248, 255);
 }
 
 
@@ -210,7 +261,7 @@ li {
 .new-item-form {
   padding: 2rem 1rem;
   margin: 2rem 0;
-  background-color: aliceblue;
+  background-color: rgb(240, 248, 255,0.7);
   font-family: 'Times New Roman', Times, serif;
 }
 
@@ -226,6 +277,8 @@ li {
 
 .new-item-form button {
   width: 150px;
+  background-color: rgb(109, 218, 176);
+  color:rgb(240, 248, 255);
 }
 
 input {

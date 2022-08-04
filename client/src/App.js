@@ -50,7 +50,7 @@ function App() {
       <main className="App">
         <Switch>
         <Route exact path='/'>
-           <Login courier={courier} setCourier={setCourier}/>
+           <Login courier={courier} setCourier={setCourier} handleClick={handleClick}/>
           </Route>
           <Route path="/signupform">
            <SignupForm setCourier={setCourier} handleBack={handleBack}/>

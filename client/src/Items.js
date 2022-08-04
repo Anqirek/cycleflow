@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import PickupList from './PickupList'
 import Search from './Search'
-import Item from './Item'
+import UpdateItems from './UpdateItems'
 import NewItem from './NewItem'
 
 function Items(){
@@ -18,13 +18,12 @@ function Items(){
         
  },[])
 
-    const filteredItems = items.filter((item)=> item
-    )
+    const filteredItems = items.filter((item)=>item)
     console.log(filteredItems)
 
        return (
         <main>
-         <Item setItems={setItems} />
+         <UpdateItems setItems={setItems} />
          <NewItem items={items} setItems={setItems}/>
          <Search search={search} setSearch={setSearch}/>
          <PickupList allItems={filteredItems} />

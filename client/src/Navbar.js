@@ -21,15 +21,17 @@ function handleLogout() {
       }
     
 return (
- <nav className='nav navbar-expand-sm navbar-light-bg-light'>
-  <a href='#'className='navtitle navbar-brand mb-0 h1'>Cycle and Flow
-  </a>
-  <ul>
-   <li className='nav-item active'><Button className='btn btn-lg btn-success border-light btn-block' onClick={handleItems}>Items</Button></li>
-   <li className='nav-item'><Button className='btn btn-lg btn-success border-light btn-block' onClick={handlePickup}>Pickups</Button></li>
-   <li className='nav-item'><Button className='btn btn-lg btn-success border-light btn-block' onClick={handleLogout}>Logout</Button></li>
-  </ul>
- </nav>
+<>
+  <nav className='navmenu'>
+    <ul className= 'nav-buttons'>
+      <li><button className='nav-button3' onClick={handleLogout}>Logout</button></li>
+      <li><button className='nav-button2' onClick={handlePickup}>Pickups</button></li>
+      <li><button className='nav-button1' onClick={handleItems}>Items</button></li>
+    </ul>
+  </nav>
+  <h1 href='#'className='nav-title'>Cycle and Flow</h1>
+  
+ </>
  )
 }
 

@@ -3,11 +3,11 @@ skip_before_action :authorize, except: :index
 
     def index
      items = Item.all
-     render json: items, status: :ok
+     render json: items, status: :ok, include: :customer
     end
 
     def show
-        item=Item.find_by(id:session[:item_id])
+        item=Item.find_by(id:session[:id])
     if  item
         render json: item
     else

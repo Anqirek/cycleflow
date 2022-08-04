@@ -1,19 +1,22 @@
 import PickupCard from './PickupCard'
 
 function PickupList({allItems}){
-    const renderItems = allItems.map((item)=> {
-     return <PickupCard
-      key = {item.id}
-      bottle = {item.bottle}
-      size = {item.size}
-      count = {item.count}
-      location = {item.location}
-     />
- })
- 
-
+ const everyItem = allItems;
+ console.log(everyItem)
     return (
-        <ul>{renderItems}</ul>
+        <ul className='cards'> 
+         {everyItem.map((item,index) => 
+          <div key={index}> <PickupCard
+            
+                customer={item.customer}
+                bottle = {item.bottle}
+                size = {item.size}
+                count = {item.count}
+                location = {item.location} 
+                />
+          </div>
+         )}
+        </ul>
     )
 }
 

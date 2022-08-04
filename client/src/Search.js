@@ -12,7 +12,7 @@ function Search({search,setSearch}){
      type="text"
      id="search"
      value={search}
-     placeholder="Search customer name here..."
+     placeholder="Search customer here..."
      onChange={handleSearch}
     />
    </header>
