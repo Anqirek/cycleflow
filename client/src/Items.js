@@ -18,8 +18,9 @@ function Items(){
         
  },[])
 
-    const filteredItems = items.filter((item)=>item)
-    console.log(filteredItems)
+    const filteredItems = items.filter((item)=>item.bottle.toLowerCase().includes(search.toLowerCase()))
+    
+    console.log(items)
 
        return (
         <main>
