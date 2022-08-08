@@ -7,32 +7,31 @@ const startValue = {
   count: '',
 }
 
-
 function NewItem({setItems}) {
 
 
-const [newItem, setNewItem] = useState({
-  bottle: '',
-  size: '',
-  count: '',
-    
-})
+ const [newItem, setNewItem] = useState({
+        bottle: '',
+        size: '',
+        count: '',
+        
+    })
 
-function handleChange(e){
-setNewItem((currentNewItem) => {
-return {
-          ...currentNewItem,
-          [e.target.name]: e.target.value,
-        };
-      })
+ function handleChange(e){
+        setNewItem((currentNewItem) => {
+         return {
+            ...currentNewItem,
+            [e.target.name]: e.target.value,
+            };
+    })
     }
 
 
-function handleSubmit(e) {
-  e.preventDefault()
-  fetch('/items', {
-  method:"POST",
-  headers: {
+ function handleSubmit(e) {
+    e.preventDefault()
+    fetch('/items', {
+    method:"POST",
+    headers: {
     "Content-Type": "application/json",
     },
     body: JSON.stringify(newItem),
@@ -50,7 +49,7 @@ function handleSubmit(e) {
 
   }
 
-return (
+ return (
     <div className="new-item-form">
       <h2>New Item</h2>
       <form onSubmit = {handleSubmit}>
@@ -68,7 +67,6 @@ return (
             value ={newItem.size} 
             placeholder="Size"
             onChange = {handleChange}
-
          />
 
         <input 
@@ -79,7 +77,7 @@ return (
             placeholder="Count" 
             onChange = {handleChange}
          />
-
+            
         <button type="submit">Add Item</button>
       </form>
     </div>

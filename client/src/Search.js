@@ -6,7 +6,7 @@ function Search({search,setSearch}){
  }
 
   return (
-   <header className='searchbar'>
+   <div className='searchbar'>
     <label htmlFor= "search"> Search for Customers: </label>
     <input
      type="text"
@@ -15,7 +15,7 @@ function Search({search,setSearch}){
      placeholder="Search customer here..."
      onChange={handleSearch}
     />
-   </header>
+   </div>
  )
 }
 
