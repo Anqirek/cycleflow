@@ -18,19 +18,18 @@ function Items(){
         
  },[])
 
-    const filteredItems = items.filter((item)=>item.bottle.toLowerCase().includes(search.toLowerCase()))
+    const filteredItems = items?.filter((item)=>item.bottle.toLowerCase().includes(search?.toLowerCase()))
     
-    console.log(items)
-
-       return (
+    return (
+    
         <main>
-         <UpdateItems setItems={setItems} />
-         <NewItem items={items} setItems={setItems}/>
-         <Search search={search} setSearch={setSearch}/>
-         <PickupList allItems={filteredItems} />
+            <UpdateItems setItems={setItems} />
+            <NewItem items={filteredItems} setItems={setItems} />
+            <Search search={search} setSearch={setSearch} />
+            <PickupList allItems={filteredItems} />
         </main>
-       )
-
+    )
 }
+
 
 export default Items

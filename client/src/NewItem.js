@@ -39,8 +39,6 @@ function NewItem({setItems}) {
 
   .then(res => res.json())
   .then(handleItems)
-
-    
   }
 
   function handleItems(data) {
