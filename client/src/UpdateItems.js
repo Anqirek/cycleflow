@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 
 
-function UpdateItems({item,setItem}){
+function UpdateItems({item}){
 
  const [bottle, setBottle]=useState('')
  const [size, setSize]=useState('')

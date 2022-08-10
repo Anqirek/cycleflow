@@ -9,22 +9,21 @@ function Items(){
  const [items,setItems]=useState([])
  const [search, setSearch]=useState('')
 
- const itemURL = '/items/'
 
  useEffect(()=>{
-        fetch(itemURL)
+        fetch('http://localhost:4000/items')
         .then(res => res.json())
-        .then((allItems) => setItems(allItems))
-        
+        .then((allTheItems)=>setItems(allTheItems))
  },[])
 
-    const filteredItems = items?.filter((item)=>item.bottle.toLowerCase().includes(search?.toLowerCase()))
+    const filteredItems = items.filter((item)=>item.bottle.toLowerCase().includes(search.toLowerCase()
+    ))
     
     return (
     
         <main>
-            <UpdateItems setItems={setItems} />
             <NewItem setItems={setItems} />
+            <UpdateItems setItems={setItems} />
             <Search search={search} setSearch={setSearch} />
             <PickupList itemList={filteredItems} />
         </main>
