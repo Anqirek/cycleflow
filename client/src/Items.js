@@ -24,9 +24,9 @@ function Items(){
     
         <main>
             <UpdateItems setItems={setItems} />
-            <NewItem items={filteredItems} setItems={setItems} />
+            <NewItem setItems={setItems} />
             <Search search={search} setSearch={setSearch} />
-            <PickupList allItems={filteredItems} />
+            <PickupList itemList={filteredItems} />
         </main>
     )
 }
