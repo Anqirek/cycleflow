@@ -23,7 +23,7 @@ function Items(){
     return (
     
         <main>
-            <NewItem setItems={setItems} />
+            <NewItem items={items} setItems={setItems} />
             <UpdateItems setItems={setItems} />
             <Search search={search} setSearch={setSearch} />
             <PickupList itemList={filteredItems} />

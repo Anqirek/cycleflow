@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState,useEffect} from "react";
 
 
 const startValue = {
@@ -9,12 +9,22 @@ const startValue = {
 }
 
 function NewItem({setItems}) {
+
+ const [customer,setCustomer]=useState([])
  const [newItem, setNewItem] = useState({
         customer:'',
         bottle: '',
         size: '',
         count: '', 
     })
+
+
+ useEffect(()=> {
+      fetch('/customers/')
+      .then(res => res.json())
+      .then((allCustomers) => setCustomer(allCustomers))
+      },[])
+     
 
  function handleChange(e){
         setNewItem((currentNewItem) => {
@@ -24,7 +34,6 @@ function NewItem({setItems}) {
         };
       })
     }
-
 
  function handleSubmit(e) {
     e.preventDefault()
@@ -43,20 +52,24 @@ function NewItem({setItems}) {
   function handleItems(data) {
   setNewItem(startValue)
   setItems((currentItems) => [...currentItems,data])
+  }
 
+  function handleCustomer(){
+    
   }
 
  return (
     <div className="new-item-form">
-      <h2>New Item</h2>
-      <form onSubmit = {handleSubmit}>
+     <h2>New Item</h2>
+     <form onSubmit = {handleSubmit}>
         <input
           type="text" 
           name="name" 
-          value ={newItem.customer} 
+          value={newItem.customer} 
           placeholder="Customer name"
           onChange = {handleChange}
          />
+      
 
         <input
             type="text" 
@@ -69,7 +82,7 @@ function NewItem({setItems}) {
         <input
             type="text" 
             name="size" 
-            value ={newItem.size} 
+            value = {newItem.size} 
             placeholder="Size"
             onChange = {handleChange}
          />
