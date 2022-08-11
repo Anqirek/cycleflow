@@ -1,43 +1,36 @@
-import {Button,CardGroup,Card} from 'react-bootstrap'
+import React from 'react'
 import { useHistory } from 'react-router-dom'
 
-function PickupCard({bottle,size,count,location,id}){
+function PickupCard({username,bottle,size,count}){
  const history = useHistory()
 
  function handlePick() {
   history.push('/PickupRequests') 
   }
 
-  function handleEdit() {
-   history.push('/EditPickups')
-  }
 
 return ( 
-
- <div className="PickupCard" >
-  <CardGroup>
-   <Card className="text-center" style ={{color: '#000', width:'20rem'}}>
-    <Card.Img id='card-img' variant='top'className="rounded sm-auto d-block" src='https://media4.giphy.com/media/Vzq3HO2Cid0CHSW2h6/giphy.gif?cid=ecf05e47zhg3xk0tw7vic0kqifjw5yhtqn01gvi5zvq55a1m&rid=giphy.gif&ct=g'/>
-    <Card.Body>
-    <Card.Title className='text-center'>
-     Customer:
-    </Card.Title> 
-    <Card.Text className='text-center'>
-     Bottle: {bottle}
-      <br></br>
-     Size: {size}
-      <br></br>
-     Count: {count}
-      <br></br>
-     Location: {location}
-    </Card.Text> 
-    <Button onClick={handlePick} type='submit'className='btn btn-lg btn-success border-light btn-block'>Pickup Bottles</Button>
-    <Button onClick={handleEdit} type='submit'className='btn btn-lg btn-success border-light btn-block'>Edit</Button>
-   </Card.Body>
-  </Card>
- </CardGroup>
-</div>
- 
+<>
+  <main className="PickupCard" >
+   <div>
+    <img id='card-img' variant='top'className="rounded sm-auto d-block" src='https://media4.giphy.com/media/Vzq3HO2Cid0CHSW2h6/giphy.gif?cid=ecf05e47zhg3xk0tw7vic0kqifjw5yhtqn01gvi5zvq55a1m&rid=giphy.gif&ct=g'/>
+    <li>
+      <ul>
+          Customer: {username}
+          <br></br>
+          Bottle: {bottle}
+            <br></br>
+          Size: {size}
+            <br></br>
+          Count: {count}
+            <br></br>
+        </ul>
+      </li> 
+    </div>
+  <button onClick={handlePick} type='submit'className='pickup-bottle-button'>Pickup Bottles</button>
+  </main>
+  
+</>
  )
 }
 

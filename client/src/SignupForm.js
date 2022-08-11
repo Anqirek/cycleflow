@@ -84,4 +84,4 @@ return  (
     )
 }
 
-export default SignupForm
+export default SignupForm;

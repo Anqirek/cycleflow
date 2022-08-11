@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-function Login({setCourier,handleClick, setError}) {
+function Login({setCourier,handleClick}) {
   
   const [email,setEmail]=useState('')
   const [password,setPassword]=useState('')
@@ -36,27 +36,27 @@ function Login({setCourier,handleClick, setError}) {
         <header className='signinform'>Please Sign in</header>
       <label htmlFor="Email"></label>
       <input
-      type="email"
-      id="emailAddress"
-      name='email'
-      value={email}
-      className='form-control'
-      placeholder='Email Address'
-      required
-      autoFocus
-      onChange={(e)=>setEmail(e.target.value)}
+        type="email"
+        id="emailAddress"
+        name='email'
+        value={email}
+        className='form-control'
+        placeholder='Email Address'
+        required
+        autoFocus
+        onChange={(e)=>setEmail(e.target.value)}
       />
       <label htmlFor="password"></label>
       <input
-      type="password"
-      id="password"
-      name= 'password'
-      value={password}
-      className='form-control'
-      placeholder='Password'
-      required
-      autoFocus
-      onChange={(e)=>setPassword(e.target.value)}
+        type="password"
+        id="password"
+        name= 'password'
+        value={password}
+        className='form-control'
+        placeholder='Password'
+        required
+        autoFocus
+        onChange={(e)=>setPassword(e.target.value)}
       />
     <div className='checkbox'>
      <label>

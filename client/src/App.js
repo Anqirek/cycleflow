@@ -2,11 +2,11 @@ import React from 'react'
 import { useState,useEffect } from 'react'
 import Login from './Login'
 import Navbar from './Navbar'
-import Home from './Home'
 import SignupForm from './SignupForm'
 import { BrowserRouter,Switch,Route,useHistory } from 'react-router-dom'
 import PickupRequests from './PickupRequests'
-import EditPickups from './EditPickups'
+import Items from './Items'
+import Item from './Item'
 import { GoogleMap,
 useLoadScript,
 Marker,
@@ -20,31 +20,8 @@ function App() {
  const [signUp, setSignUp]=useState(true)
  const [error, setError]=useState('')
  const previous=useHistory()
- const [items,setItems]=useState([])
- const [search, setSearch]=useState("")
- const [id, setId]=useState(null)
-
- const itemURL = '/items'
- const itemKey = Object.keys(items).map((key) => {
-    return key
-  })
- const itemValue = Object.values(items).map((value) => {
-    return value
- })
-//  const itemEntries = Object.entries(items).map(([key, value]) => {
  
-//  return {[key]:value}
-//  })
-  
 
-
-    useEffect(()=>{
-      fetch(itemURL)
-      .then(res => res.json())
-      .then((allItems) =>  setItems(allItems))
-      
-     },[])
-     console.log(items)
      useEffect(() => {
       fetch("/me")
       .then((response) => {
@@ -54,7 +31,6 @@ function App() {
       });
     }, []);
 
-    console.log(items)
 
     const handleBack =()=>{
       previous.push('/')
@@ -74,10 +50,7 @@ function App() {
       <main className="App">
         <Switch>
         <Route exact path='/'>
-           <Login items={items} setItem={setItems} key ={id}/>
-          </Route>
-          <Route path='/Home'>
-           <Home key ={id} courier={courier} items={items} setItem={setItems} search={search} setSearch={setSearch} id={id}  />
+           <Login courier={courier} setCourier={setCourier} handleClick={handleClick}/>
           </Route>
           <Route path="/signupform">
            <SignupForm setCourier={setCourier} handleBack={handleBack}/>
@@ -85,8 +58,11 @@ function App() {
           <Route path='/PickupRequests'>
            <PickupRequests />
           </Route>
-          <Route path='/EditPickups'>
-           <EditPickups key={id} items={items} setItem={setItems} itemKey = {itemKey} itemValue={itemValue} />
+          <Route path = '/Item'>
+           <Item />
+          </Route>
+          <Route path='/Items'>
+           <Items />
           </Route>
         </Switch>
       </main>
