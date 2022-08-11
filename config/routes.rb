@@ -15,7 +15,7 @@ Rails.application.routes.draw do
  
  post '/login', to: 'sessions#create'
  post '/signupform', to: 'couriers#create'
- post '/items', to: 'items#index'
+ post '/items/', to: 'items#create'
 
  delete '/logout', to: 'sessions#destroy'
 

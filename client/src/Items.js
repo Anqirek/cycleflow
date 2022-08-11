@@ -1,8 +1,9 @@
 import React, {useState,useEffect} from 'react'
-import PickupList from './PickupList'
-import Search from './Search'
-import UpdateItems from './UpdateItems'
 import NewItem from './NewItem'
+import PickupList from './PickupList'
+import UpdateItems from './UpdateItems'
+import Search from './Search'
+
 
 function Items(){
 
@@ -10,15 +11,15 @@ function Items(){
  const [search, setSearch]=useState('')
 
 
- useEffect(()=>{
-        fetch('http://localhost:4000/items')
-        .then(res => res.json())
-        .then((allTheItems)=>setItems(allTheItems))
- },[])
+ useEffect(()=> {
+    fetch('/items/')
+    .then(res => res.json())
+    .then((allItems) => setItems(allItems))
+    },[])
 
-    const filteredItems = items.filter((item)=>item.bottle.toLowerCase().includes(search.toLowerCase()
-    ))
-    
+    const filteredItems = items.filter((item)=>item)
+    console.log(filteredItems)
+
     return (
     
         <main>

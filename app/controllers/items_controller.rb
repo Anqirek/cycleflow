@@ -6,6 +6,12 @@ skip_before_action :authorize, except: :index
      render json: items, status: :ok, include: :customer
     end
 
+    def create
+        item = Item.create!(item_params)
+        session[:item_id] = item.id
+        render json: item, status: :created
+    end
+
     def show
         item=Item.find_by(id:session[:id])
     if  item
@@ -28,7 +34,7 @@ skip_before_action :authorize, except: :index
     private
 
     def item_params
-     params.permit(:bottle, :size, :count)
+     params.permit( :customer_id, :bottle, :size, :count)
     end
 
 end

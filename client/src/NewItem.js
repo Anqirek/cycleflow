@@ -2,19 +2,18 @@ import React, {useState} from "react";
 
 
 const startValue = {
+  customer:'',
   bottle: '',
   size: '',
   count: '',
 }
 
 function NewItem({setItems}) {
-
-
  const [newItem, setNewItem] = useState({
+        customer:'',
         bottle: '',
         size: '',
-        count: '',
-        
+        count: '', 
     })
 
  function handleChange(e){
@@ -22,14 +21,14 @@ function NewItem({setItems}) {
          return {
             ...currentNewItem,
             [e.target.name]: e.target.value,
-            };
-    })
+        };
+      })
     }
 
 
  function handleSubmit(e) {
     e.preventDefault()
-    fetch('/items', {
+    fetch('/items/', {
     method:"POST",
     headers: {
     "Content-Type": "application/json",
@@ -51,6 +50,14 @@ function NewItem({setItems}) {
     <div className="new-item-form">
       <h2>New Item</h2>
       <form onSubmit = {handleSubmit}>
+        <input
+          type="text" 
+          name="name" 
+          value ={newItem.customer} 
+          placeholder="Customer name"
+          onChange = {handleChange}
+         />
+
         <input
             type="text" 
             name="bottle" 
